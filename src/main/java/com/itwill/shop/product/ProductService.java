@@ -44,5 +44,11 @@ public class ProductService {
 	 public int productInsert(Product product) throws Exception{
 		 return productDao.insert(product);
 	 }
+	 /*
+	  * 
+	  */
+	 public void updateClickCount(int p_click_count) throws Exception{
+		productDao.increaseClickCount(p_click_count);
+	}
 
 }

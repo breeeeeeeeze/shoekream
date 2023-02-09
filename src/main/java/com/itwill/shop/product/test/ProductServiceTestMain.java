@@ -27,6 +27,10 @@ public class ProductServiceTestMain {
 		 * 상품 정보 추가
 		 */
 		System.out.println(productService.productInsert(new Product(10,"shoes2",2000000,"shoes1.jpg","기타등등등",0,1)));
+//		/*
+//		 * 상품 조회수 증가
+//		 */
+//		System.out.println(productService.updateClickCount(productService.productDetail(1).getP_click_count()));
 	}
 
 }

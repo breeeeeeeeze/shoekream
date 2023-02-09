@@ -57,7 +57,7 @@ public class ProductDao {
 		return productList;
 	}
 	/*
-	 * 상품추가
+	 * 상품 추가
 	 */
 	public int insert(Product product) throws Exception {
 		Connection con = null;
@@ -111,7 +111,7 @@ public class ProductDao {
 		return rowCount;
 	}
 	/*
-	 * 상품이름으로삭제
+	 * 상품 이름으로 삭제
 	 */
 	public int delete(String p_name )throws Exception{
 		Connection con = null;
@@ -131,7 +131,7 @@ public class ProductDao {
 		return rowCount;
 	}
 	/*
-	 * 상품번호검색
+	 * 상품 번호 검색
 	 */
 	public Product selectByNo(int p_no) throws Exception{
 		Product product=null;
@@ -163,7 +163,7 @@ public class ProductDao {
 		return product;
 	}
 	/*
-	 * 상품전체검색
+	 * 상품 전체 검색
 	 */
 	public List<Product> selectAll() throws Exception{
 		List<Product> productList=new ArrayList<Product>();
@@ -195,5 +195,65 @@ public class ProductDao {
 				con.close();
 		}
 		return productList;
+	}
+	/*
+	 * 상품 조회수를 1 증가.
+	 */
+	public void increaseClickCount(int number) throws Exception {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_INCREASE_CLICKCOUNT);
+			pstmt.setInt(1, number);
+			pstmt.executeUpdate();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (Exception ex) {
+			}
+			try {
+				if (con != null)
+					con.close();
+			} catch (Exception ex) {
+			}
+		}
+	}
+
+	/*
+	 * 상품 총 건수를 조회, 반환
+	 */
+	public int getProductCount() throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_COUNT_SELECT);
+			rs = pstmt.executeQuery();
+			if (rs.next())
+				count = rs.getInt(1);
+
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+			} catch (Exception ex) {
+			}
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (Exception ex) {
+			}
+			try {
+				if (con != null)
+					con.close();
+			} catch (Exception ex) {
+			}
+		}
+		return count;
 	}
 }

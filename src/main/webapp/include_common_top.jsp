@@ -35,6 +35,7 @@
 		<span><a href="order_list.jsp">주문목록</a></li>
 		
 	<%} %>
+		<span><a href="product_list.jsp?category_no=0">전체 상품</a></span>
 		<span><a href="product_list.jsp?category_no=1">운동화</a></span>
 		<span><a href="product_list.jsp?category_no=2">구두</a></span>
 		<span><a href="product_list.jsp?category_no=3">부츠</a></span>
