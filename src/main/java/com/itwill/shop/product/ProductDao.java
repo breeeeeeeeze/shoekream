@@ -205,7 +205,7 @@ public class ProductDao {
 
 		try {
 			con = dataSource.getConnection();
-			pstmt = con.prepareStatement(ProductSQL.PRODUCT_INCREASE_CLICKCOUNT);
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_INCREASE_CLICK_COUNT);
 			pstmt.setInt(1, number);
 			pstmt.executeUpdate();
 		} finally {

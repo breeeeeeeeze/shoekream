@@ -45,10 +45,18 @@ public class ProductService {
 		 return productDao.insert(product);
 	 }
 	 /*
-	  * 
-	  */
-	 public void updateClickCount(int p_click_count) throws Exception{
-		productDao.increaseClickCount(p_click_count);
+	 조회수 증가
+	 */
+	private static ProductService _instance;
+	public static ProductService getInstance() throws Exception{
+		if(_instance == null) {
+			_instance = new ProductService();
+		}
+		return _instance;
+	}
+	
+	public void updateHitCount(int p_no) throws Exception{
+			productDao.increaseClickCount(p_no);
 	}
 
 }
