@@ -20,6 +20,15 @@ public class ProductDaoTestMain {
 		System.out.println(productDao.delete("shoes2"));
 		
 		System.out.println(productDao.selectByCategory(1));
+		
+		System.out.println(productDao.priceSortAsc());
+		
+		System.out.println(productDao.priceSortDesc());
+		
+		System.out.println(productDao.clickSortAsc());
+		
+		System.out.println(productDao.clickSortDesc());
+		
 	}
 
 }

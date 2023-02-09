@@ -58,5 +58,28 @@ public class ProductService {
 	public void updateHitCount(int p_no) throws Exception{
 			productDao.increaseClickCount(p_no);
 	}
-
+	/*
+	 * 가격 내림차순 정렬
+	 */
+	public List<Product> priceSortDesc() throws Exception{
+		return productDao.priceSortDesc();
+	}
+	/*
+	 * 가격 오름차순 정렬
+	 */
+	public List<Product> priceSortAsc() throws Exception{
+		return productDao.priceSortAsc();
+	}
+	/*
+	 * 조회수 내림차순 정렬
+	 */
+	public List<Product> clickSortDesc() throws Exception{
+		return productDao.priceSortDesc();
+	}
+	/*
+	 * 조회수 오름차순 정렬
+	 */
+	public List<Product> clickSortAsc() throws Exception{
+		return productDao.priceSortAsc();
+	}
 }
