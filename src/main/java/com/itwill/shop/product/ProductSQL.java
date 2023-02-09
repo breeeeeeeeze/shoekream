@@ -9,5 +9,6 @@ public class ProductSQL {
 	public final static String PRODUCT_SELECT_BY_CATEGORY = "select * from product where category_no=?";
 	public final static String PRODUCT_INCREASE_CLICK_COUNT = "UPDATE product SET p_click_count = p_click_count + 1 WHERE product_no = ?";
 	public final static String PRODUCT_COUNT_SELECT = "select count(*) cnt from product";
-
+	public static final String PRODUCT_DESC_TEST =
+			"select * from product order by p_price desc";
 }
