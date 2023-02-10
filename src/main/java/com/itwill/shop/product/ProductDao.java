@@ -324,6 +324,7 @@ public class ProductDao {
 		}
 		return productList;
 	}
+	/***********************안씀**************************/
 	/*
 	 * 조회수 내림차순
 	 */

@@ -48,9 +48,9 @@ function add_cart_popup_window(f){
 }
 
 function product_sort(){
-	document.cart_view_form.method='POST';
-	document.cart_view_form.action='product_alignment_action.jsp';
-	document.cart_view_form.submit();
+	document.product_alignment_action_form.method='POST';
+	document.product_alignment_action_form.action='product_alignment_action.jsp';
+	document.product_alignment_action_form.submit();
 }
 </script> 
 <style type="text/css" media="screen">
@@ -83,14 +83,14 @@ function product_sort(){
 											상품리스트</b></td>
 								</tr>
 							</table>
-							<form action="product_alignment_action" method="post">
+							<form name = "product_alignment_action_form" action="product_alignment_action" method="post">
 							<br><b>정렬</b>&nbsp;
 							<select name="sort_option" onchange="product_sort();">
 								<option value="select">선택
 								<option value="price_sort_asc">가격 오름차순
 								<option value="price_sort_desc">가격 내림차순
-								<option value="click_sort_asc">조회수 오름차순
-								<option value="click_sort_desc">조회수 내림차순
+						   <!-- <option value="click_sort_asc">조회수 오름차순
+								<option value="click_sort_desc">조회수 내림차순 -->
 							</select> <br><br> 
 							</form>
 							<div id="f">

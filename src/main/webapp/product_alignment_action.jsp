@@ -12,17 +12,20 @@
 	if(type_no == null){
 		if(sort_option.equals("price_sort_asc")){
 			productList = productService.priceSortAsc();
-			response.sendRedirect("product_list.jsp");
+			response.sendRedirect("product_list2.jsp");
 		}else if(sort_option.equals("price_sort_desc")){
 			productList = productService.priceSortDesc();
-			response.sendRedirect("product_list.jsp");
-		}else if(sort_option.equals("click_sort_asc")){
+			response.sendRedirect("product_list2.jsp");
+		}else{
+			response.sendRedirect("product_list2.jsp");
+		}
+		/*else if(sort_option.equals("click_sort_asc")){
 			productList = productService.clickSortAsc();
 			response.sendRedirect("product_list.jsp?type_no="+type_no);
 		}else if(sort_option.equals("click_sort_desc")){
-			productList = productService.clickSortDesc(/*Integer.parseInt(type_no)*/);
+			productList = productService.clickSortDesc(Integer.parseInt(type_no));
 			response.sendRedirect("product_list.jsp?type_no="+type_no);
-		}
+		}*/
 	}
 	
 %>

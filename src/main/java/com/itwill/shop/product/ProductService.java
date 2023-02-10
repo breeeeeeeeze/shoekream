@@ -70,6 +70,7 @@ public class ProductService {
 	public List<Product> priceSortAsc() throws Exception{
 		return productDao.priceSortAsc();
 	}
+	/***********************안씀**************************/
 	/*
 	 * 조회수 내림차순 정렬
 	 */
