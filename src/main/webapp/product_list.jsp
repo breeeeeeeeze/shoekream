@@ -83,7 +83,7 @@ function product_sort(){
 											상품리스트</b></td>
 								</tr>
 							</table>
-							<form name = "product_alignment_action_form" action="product_alignment_action" method="post">
+							<form name = "product_alignment_action_form" action="product_alignment_action.jsp" method="get">
 							<br><b>정렬</b>&nbsp;
 							<select name="sort_option" onchange="product_alignment_action_form.submit();">
 								<option value="select">선택

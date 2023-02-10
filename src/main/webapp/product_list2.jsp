@@ -16,6 +16,7 @@ String category_noStr=request.getParameter("category_no");
 if(category_noStr==null)category_noStr="0";
 
 ProductService productService = new ProductService();
+String sort_option = request.getParameter("sort_option");
 List<Product> productList = null;
 if(category_noStr.equals("0")){
 	productList=productService.productList();
@@ -83,7 +84,7 @@ function product_sort(){
 											상품리스트</b></td>
 								</tr>
 							</table>
-							<form name = "product_alignment_action_form" action="product_alignment_action" method="post">
+							<form name = "product_alignment_action_form" action="product_alignment_action.jsp" method="get">
 							<br><b>정렬</b>&nbsp;
 							<select name="sort_option" onchange="product_alignment_action_form.submit();">
 								<option value="select">선택
