@@ -85,7 +85,7 @@ function product_sort(){
 							</table>
 							<form name = "product_alignment_action_form" action="product_alignment_action" method="post">
 							<br><b>정렬</b>&nbsp;
-							<select name="sort_option" onchange="product_sort();">
+							<select name="sort_option" onchange="product_alignment_action_form.submit();">
 								<option value="select">선택
 								<option value="price_sort_asc">가격 오름차순
 								<option value="price_sort_desc">가격 내림차순
